@@ -37,6 +37,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4651781818749422}
+  - component: {fileID: 114754494302777624}
+  - component: {fileID: 114926902776817348}
+  - component: {fileID: 114876179782139148}
   m_Layer: 0
   m_Name: PlayerUnit
   m_TagString: Untagged
@@ -113,6 +116,70 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1383557448894262}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114754494302777624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510634664403882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 161
+    i1: 66
+    i2: 250
+    i3: 195
+    i4: 137
+    i5: 113
+    i6: 64
+    i7: 100
+    i8: 58
+    i9: 175
+    i10: 173
+    i11: 54
+    i12: 15
+    i13: 139
+    i14: 132
+    i15: 164
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
+--- !u!114 &114876179782139148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510634664403882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114926902776817348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510634664403882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f142f009073bc9445889f8fa285a24f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135439632853474666
 SphereCollider:
   m_ObjectHideFlags: 1
