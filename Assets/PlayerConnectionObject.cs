@@ -19,17 +19,21 @@ public class PlayerConnectionObject : NetworkBehaviour {
 	}
 	
 	public GameObject PlayerUnitPrefab;
+	public GameObject cube;
 
 	// Sync vars are variables that change on clients if changed on the server
 	[SyncVar(hook="OnPlayerNameChanged")]
 	public string PlayerName = "Anonymous";
 
+	[SyncVar]
+	public Color PlayerColor = new Color(1,1,1,1);
+
 	// Update is called once per frame
 	void Update () {
 		// Runs on everyones componuter regardless of who's object it is
-		if (Input.GetKeyDown(KeyCode.S)) {
-			CmdSpawnMyUnit();
-		}
+		// if (Input.GetKeyDown(KeyCode.S)) {
+		// 	CmdSpawnMyUnit();
+		// }
 
 		if (Input.GetKeyDown(KeyCode.Q)) {
 			string n = "user_" + Random.Range(1, 1000);
@@ -55,6 +59,11 @@ public class PlayerConnectionObject : NetworkBehaviour {
 	void CmdSpawnMyUnit() {
 
 		GameObject go = Instantiate(PlayerUnitPrefab);
+		float r = Random.Range( 0.0f, 1.0f);
+		float g = Random.Range( 0.0f, 1.0f);
+		float b = Random.Range( 0.0f, 1.0f);
+		Debug.Log(r + " " + g + " " + b);
+		go.GetComponentInChildren<Renderer> ().material.color = new Color(r, g, b, 1);
 
 		NetworkServer.SpawnWithClientAuthority(go, connectionToClient);
 	}
@@ -84,4 +93,10 @@ public class PlayerConnectionObject : NetworkBehaviour {
 	// 	 Debug.Log("RpcChangePlayerName: " + n);
 	// 	 PlayerName = n;
 	// }
+
+	[ClientRpc]
+	void RpcChangePlayerColor(Color c) {
+		 Debug.Log("RpcChangePlayerColor: " + c);
+		 PlayerColor = c;
+	}
 }
